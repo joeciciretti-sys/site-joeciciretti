@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://joeciciretti.be/sitemap.xml
