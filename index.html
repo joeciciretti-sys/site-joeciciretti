@@ -293,6 +293,11 @@ footer .inner{display:flex;justify-content:space-between;align-items:center;gap:
   .cta-s{padding:9px 11px;letter-spacing:.12em}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+.f-links{display:flex;flex-wrap:wrap;gap:8px 22px;width:100%;order:3}
+.f-links a{text-decoration:none;color:var(--muted)}
+.f-links a:hover{color:var(--accent)}
+.svc-more{display:inline-block;margin-top:12px;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--accent)}
 </style>
 </head>
 <body>
@@ -320,8 +325,8 @@ footer .inner{display:flex;justify-content:space-between;align-items:center;gap:
     </div>
     <div class="inner">
       <div>
-        <span class="eyebrow">Dessinateur en architecture · Belgique</span>
-        <h1>Dessin technique <span class="it">en architecture</span></h1>
+        <span class="eyebrow">Dessin technique · Belgique</span>
+        <h1>Dessinateur <span class="it">en architecture</span></h1>
         <p>Plans de permis d'urbanisme, relevés et vues 3D réalistes pour les bureaux d'architecture, en construction neuve, rénovation et régularisation.</p>
         <div class="btns">
           <a class="b k" href="#contact">Demander une offre <span class="ar">→</span></a>
@@ -369,12 +374,12 @@ footer .inner{display:flex;justify-content:space-between;align-items:center;gap:
       </div>
       <div class="serv">
         <div class="svc-list">
-          <div class="svc open" data-s="0"><h3><button type="button" class="svc-btn" aria-expanded="true" aria-controls="svc-0">Plans de permis d'urbanisme<span class="pm" aria-hidden="true">↓</span></button></h3><div class="svc-body" id="svc-0"><div><p>Pièces graphiques complètes de la demande de permis, de l'implantation aux façades, prêtes à être déposées.</p></div></div></div>
-          <div class="svc" data-s="1"><h3><button type="button" class="svc-btn" aria-expanded="false" aria-controls="svc-1">Régularisation<span class="pm" aria-hidden="true">↓</span></button></h3><div class="svc-body" id="svc-1"><div><p>Plans de mise en conformité urbanistique d'un bien existant.</p></div></div></div>
-          <div class="svc" data-s="2"><h3><button type="button" class="svc-btn" aria-expanded="false" aria-controls="svc-2">Relevés<span class="pm" aria-hidden="true">↓</span></button></h3><div class="svc-body" id="svc-2"><div><p>Relevé sur site et mise au net de la situation existante.</p></div></div></div>
-          <div class="svc" data-s="3"><h3><button type="button" class="svc-btn" aria-expanded="false" aria-controls="svc-3">Redessin de plans anciens<span class="pm" aria-hidden="true">↓</span></button></h3><div class="svc-body" id="svc-3"><div><p>Plans papier, PDF ou scannés remis au propre en fichiers de travail précis et modifiables.</p></div></div></div>
-          <div class="svc" data-s="4"><h3><button type="button" class="svc-btn" aria-expanded="false" aria-controls="svc-4">Modélisation et vues 3D<span class="pm" aria-hidden="true">↓</span></button></h3><div class="svc-body" id="svc-4"><div><p>Maquette 3D et vues réalistes qui rendent le projet concret avant les travaux.</p></div></div></div>
-          <div class="svc" data-s="5"><h3><button type="button" class="svc-btn" aria-expanded="false" aria-controls="svc-5">Bordereaux et métrés<span class="pm" aria-hidden="true">↓</span></button></h3><div class="svc-body" id="svc-5"><div><p>Réalisation des bordereaux de châssis et de portes : chaque menuiserie est repérée sur plan et décrite (dimensions, type d'ouverture, finitions) pour la remise de prix du menuisier. Assistance aux métrés pour l'estimation des quantités.</p></div></div></div>
+          <div class="svc open" data-s="0"><h3><button type="button" class="svc-btn" aria-expanded="true" aria-controls="svc-0">Plans de permis d'urbanisme<span class="pm" aria-hidden="true">↓</span></button></h3><div class="svc-body" id="svc-0"><div><p>Pièces graphiques complètes de la demande de permis, de l'implantation aux façades, prêtes à être déposées.</p><a class="svc-more" href="/plans-permis-urbanisme/">En savoir plus →</a></div></div></div>
+          <div class="svc" data-s="1"><h3><button type="button" class="svc-btn" aria-expanded="false" aria-controls="svc-1">Régularisation<span class="pm" aria-hidden="true">↓</span></button></h3><div class="svc-body" id="svc-1"><div><p>Plans de mise en conformité urbanistique d'un bien existant.</p><a class="svc-more" href="/plans-regularisation/">En savoir plus →</a></div></div></div>
+          <div class="svc" data-s="2"><h3><button type="button" class="svc-btn" aria-expanded="false" aria-controls="svc-2">Relevés<span class="pm" aria-hidden="true">↓</span></button></h3><div class="svc-body" id="svc-2"><div><p>Relevé sur site et mise au net de la situation existante.</p><a class="svc-more" href="/releves-existant/">En savoir plus →</a></div></div></div>
+          <div class="svc" data-s="3"><h3><button type="button" class="svc-btn" aria-expanded="false" aria-controls="svc-3">Redessin de plans anciens<span class="pm" aria-hidden="true">↓</span></button></h3><div class="svc-body" id="svc-3"><div><p>Plans papier, PDF ou scannés remis au propre en fichiers de travail précis et modifiables.</p><a class="svc-more" href="/redessin-plans-anciens/">En savoir plus →</a></div></div></div>
+          <div class="svc" data-s="4"><h3><button type="button" class="svc-btn" aria-expanded="false" aria-controls="svc-4">Modélisation et vues 3D<span class="pm" aria-hidden="true">↓</span></button></h3><div class="svc-body" id="svc-4"><div><p>Maquette 3D et vues réalistes qui rendent le projet concret avant les travaux.</p><a class="svc-more" href="/vues-3d-architecture/">En savoir plus →</a></div></div></div>
+          <div class="svc" data-s="5"><h3><button type="button" class="svc-btn" aria-expanded="false" aria-controls="svc-5">Bordereaux et métrés<span class="pm" aria-hidden="true">↓</span></button></h3><div class="svc-body" id="svc-5"><div><p>Réalisation des bordereaux de châssis et de portes : chaque menuiserie est repérée sur plan et décrite (dimensions, type d'ouverture, finitions) pour la remise de prix du menuisier. Assistance aux métrés pour l'estimation des quantités.</p><a class="svc-more" href="/bordereaux-chassis-metres/">En savoir plus →</a></div></div></div>
         </div>
         <div class="preview" aria-hidden="true">
           <img class="on" data-s="0" src="img/plans.jpg" alt="" loading="lazy">
@@ -487,6 +492,7 @@ footer .inner{display:flex;justify-content:space-between;align-items:center;gap:
     <img class="f-logo" src="img/logo-complet.png" alt="Logo Joé Ciciretti, dessinateur technique" width="700" height="725" loading="lazy">
     <span>© 2026 Joé Ciciretti</span>
     <a href="#top" style="text-decoration:none">Haut de page ↑</a>
+    <nav class="f-links" aria-label="Pages du site"><a href="/">Accueil</a><a href="/plans-permis-urbanisme/">Plans de permis d&#x27;urbanisme</a><a href="/plans-regularisation/">Plans de régularisation</a><a href="/releves-existant/">Relevés de l&#x27;existant</a><a href="/redessin-plans-anciens/">Redessin de plans anciens</a><a href="/vues-3d-architecture/">Modélisation et vues 3D</a><a href="/bordereaux-chassis-metres/">Bordereaux et métrés</a><a href="/dessinateur-architecture-belgique/">Zone d&#x27;intervention</a></nav>
   </div>
 </footer>
 

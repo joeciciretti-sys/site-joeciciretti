@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="fr-BE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Relevé de bâtiment existant et plans de l&#x27;existant · Joé Ciciretti</title>
+<meta name="description" content="Relevé sur site d&#x27;un bâtiment existant et mise au net en plans, coupes et façades, pour les architectes et les particuliers, partout en Belgique.">
+<link rel="canonical" href="https://joeciciretti.be/releves-existant/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:title" content="Relevé de bâtiment existant et plans de l&#x27;existant · Joé Ciciretti">
+<meta property="og:description" content="Relevé sur site d&#x27;un bâtiment existant et mise au net en plans, coupes et façades, pour les architectes et les particuliers, partout en Belgique.">
+<meta property="og:url" content="https://joeciciretti.be/releves-existant/">
+<meta property="og:image" content="https://joeciciretti.be/img/partage.jpg">
+<link rel="icon" type="image/png" sizes="64x64" href="/img/favicon-64.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Relevés de l'existant", "description": "Relevé sur site d'un bâtiment existant et mise au net en plans, coupes et façades, pour les architectes et les particuliers, partout en Belgique.", "url": "https://joeciciretti.be/releves-existant/", "areaServed": {"@type": "Country", "name": "Belgique"}, "provider": {"@type": "ProfessionalService", "name": "Joé Ciciretti - Dessinateur en architecture", "url": "https://joeciciretti.be/", "telephone": "+32 478 07 98 43"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://joeciciretti.be/"}, {"@type": "ListItem", "position": 2, "name": "Relevés de l'existant", "item": "https://joeciciretti.be/releves-existant/"}]}]}
+</script>
+<link rel="stylesheet" href="/fonts.css">
+<style>
+/* Mise en page : nuit d'architecte. Fond noir volontaire (un seul thème), grande vue 3D plein cadre,
+   planches blanches qui ressortent comme posées sur une table lumineuse. Accent or, repris du logo de Joé. */
+:root{
+  --bg:#0e0e0d; --surface:#161614; --raise:#1e1e1b; --ink:#f3f1eb; --muted:#a29f96; --line:#2a2926; --line-2:#3a3934;
+  --accent:#d1a83f; --on-accent:#14110a; --paper:#ffffff;
+  --display:"Jost","Futura","Century Gothic",system-ui,sans-serif;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --mono:"DM Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--ink);font:300 1.05rem/1.75 var(--display);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.inner{max-width:1280px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+h1,h2,h3{margin:0;font-weight:300;line-height:1.02;letter-spacing:-.01em;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.it{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0;text-transform:none}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-weight:500;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--accent)}
+.b{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-size:.74rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;padding:17px 28px;border:1px solid currentColor;transition:background .25s,color .25s,border-color .25s,transform .25s;font-family:inherit;background:none;color:inherit;cursor:pointer}
+.b:hover{transform:translateY(-2px)}
+.b.k{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.b.k:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.b.o:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.b .ar{transition:transform .25s}
+.b:hover .ar{transform:translateX(4px)}
+
+/* EN-TÊTE : transparent sur l'image, opaque dès qu'on descend */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+.hdr{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:20;transition:background .35s,box-shadow .35s}
+.hdr.solid{background:rgba(14,14,13,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+.hdr nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
+.logo{text-decoration:none;display:flex;align-items:center;gap:12px;line-height:1.15}
+.logo img{height:44px;width:auto;display:block}
+.logo span{display:flex;flex-direction:column}
+.logo b{font-weight:600;font-size:1.02rem;letter-spacing:.32em}
+.logo small{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.hdr ul{list-style:none;margin:0;padding:0;display:flex;gap:34px}
+.hdr ul a{text-decoration:none;font-size:.72rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;padding-block:6px;border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
+.hdr ul a:hover{border-color:var(--accent);color:var(--accent)}
+.cta-s{font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;padding:12px 18px;background:var(--accent);color:var(--on-accent);white-space:nowrap}
+.cta-s:hover{background:var(--ink);color:var(--bg)}
+
+/* OUVERTURE : vue 3D plein cadre, jour et soirée au même point de vue */
+.hero{position:relative;min-height:clamp(560px,86vh,880px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero .shots{position:absolute;inset:0;z-index:-2}
+.hero .shots img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:55% 40%;transition:opacity 1.4s ease}
+.hero .shots .soir{opacity:0}
+.hero.night .shots .soir{opacity:1}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(14,14,13,.55) 0%,rgba(14,14,13,0) 28%,rgba(14,14,13,.15) 55%,rgba(14,14,13,.92) 100%),linear-gradient(90deg,rgba(14,14,13,.7) 0%,rgba(14,14,13,0) 60%)}
+@media (prefers-reduced-motion:no-preference){.hero .shots{animation:kb 22s ease-out both}@keyframes kb{from{transform:scale(1.07)}to{transform:scale(1)}}}
+.hero .inner{width:100%;padding-block:150px 56px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end}
+.hero .inner > *{min-width:0}
+.hero h1{font-size:clamp(3.2rem,8.6vw,8.2rem);line-height:.92;letter-spacing:-.025em;font-weight:300;margin:18px 0 26px}
+.hero h1 .it{display:block;color:var(--accent);font-size:1.06em;letter-spacing:-.01em}
+.hero p{font-size:1.15rem;color:#d9d6ce;max-width:30em}
+.hero .btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.daynight{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.daynight .seg2{display:flex;border:1px solid rgba(243,241,235,.35);background:rgba(14,14,13,.35);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.daynight button{all:unset;box-sizing:border-box;cursor:pointer;font-size:.66rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;padding:10px 16px;color:#d9d6ce}
+.daynight button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.daynight button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.daynight small{font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;color:#bdbab1;text-align:right}
+
+/* BANDE DE PLANCHES QUI DÉFILE */
+.ticker{border-block:1px solid var(--line);background:var(--surface);overflow:hidden;position:relative}
+.tk-track{display:flex;gap:22px;width:max-content;padding:26px 22px}
+.tk-track img{height:170px;width:auto;display:block;background:var(--paper);padding:10px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+@media (prefers-reduced-motion:no-preference){.tk-track{animation:tk 80s linear infinite}.ticker:hover .tk-track{animation-play-state:paused}@keyframes tk{to{transform:translateX(-50%)}}}
+@media (prefers-reduced-motion:reduce){.ticker{overflow-x:auto}}
+
+/* SECTIONS */
+section{padding-block:128px}
+.sh{display:grid;grid-template-columns:1fr 1fr;gap:28px 64px;align-items:end;margin-bottom:64px}
+.sh > *{min-width:0}
+.sh h2{font-size:clamp(2.6rem,6vw,5.2rem);margin-top:18px;text-transform:uppercase;letter-spacing:.01em;font-weight:300}
+.sh p{color:var(--muted);max-width:32em}
+
+/* PRÉSENTATION */
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center}
+.intro > *{min-width:0}
+.portrait{margin:0;position:relative}
+.portrait::before{content:"";position:absolute;inset:22px -22px -22px 22px;border:1px solid var(--accent);z-index:-1}
+.portrait{isolation:isolate}
+.portrait img{display:block;width:100%;height:auto;max-width:100%}
+.intro h2{font-size:clamp(2.2rem,4.4vw,3.8rem);margin-top:18px}
+.intro h2 .it{color:var(--accent)}
+.intro .txt{display:flex;flex-direction:column;gap:20px;color:var(--muted);margin-top:30px;max-width:34em}
+
+/* SERVICES : accordéon. Seul le titre est visible ; un clic sur la ligne déroule le texte */
+.serv{display:grid;grid-template-columns:1.25fr 1fr;gap:64px;align-items:start}
+.serv > *{min-width:0}
+.svc-list{border-top:1px solid var(--line-2)}
+.svc{border-bottom:1px solid var(--line-2)}
+.svc h3{font-size:inherit;line-height:inherit;letter-spacing:inherit}
+.svc-btn{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px;padding:24px 4px;font-family:var(--display);font-size:clamp(1.5rem,2.7vw,2.3rem);font-weight:300;line-height:1.15;transition:color .25s,padding .35s}
+.svc-btn:hover{color:var(--accent);padding-left:14px}
+.svc-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.svc .pm{display:grid;place-items:center;width:46px;height:46px;border:1px solid var(--line-2);border-radius:50%;font-size:1.1rem;transition:transform .35s,background .25s,border-color .25s,color .25s}
+.svc-btn:hover .pm{border-color:var(--accent)}
+.svc.open .svc-btn{color:var(--accent)}
+.svc.open .pm{transform:rotate(180deg);background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.svc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease}
+.svc.open .svc-body{grid-template-rows:1fr}
+.svc-body > div{overflow:hidden;visibility:hidden;transition:visibility 0s .4s}
+.svc.open .svc-body > div{visibility:visible;transition-delay:0s}
+.svc-body p{color:#d8d5cd;font-size:1.15rem;line-height:1.7;max-width:34em;padding:0 4px 30px}
+.preview{position:sticky;top:110px;background:var(--paper);aspect-ratio:4/3;display:grid;box-shadow:0 30px 60px rgba(0,0,0,.5);max-width:100%}
+.preview img{grid-area:1/1;width:100%;height:100%;object-fit:contain;padding:22px;opacity:0;transition:opacity .45s,transform .6s;transform:scale(.98)}
+.preview img.cover{object-fit:cover;padding:0}
+.preview img.on{opacity:1;transform:scale(1)}
+.preview .cap{grid-area:1/1;align-self:end;justify-self:start;margin:14px;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;background:#161614;color:#f3f1eb;padding:6px 10px}
+
+/* RÉALISATIONS */
+.projets{background:var(--surface)}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:52px}
+.card{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;background:var(--raise);border:1px solid var(--line);transition:border-color .25s,transform .3s;min-width:0}
+.card:hover{transform:translateY(-4px);border-color:var(--line-2)}
+.card[aria-selected="true"]{border-color:var(--accent)}
+.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.card .im{display:block;aspect-ratio:4/3;background:#fff;overflow:hidden}
+.card img{display:block;width:100%;height:100%;object-fit:contain;padding:10px;transition:transform .8s}
+.card img.cover{object-fit:cover;padding:0}
+.card:hover img{transform:scale(1.05)}
+.card .t{display:flex;flex-direction:column;gap:4px;padding:14px 16px 18px}
+.card .t span{font-size:.6rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.card .t b{font-weight:400;font-size:1rem;line-height:1.3}
+.viewer{display:grid;grid-template-columns:280px 1fr;gap:36px;align-items:start}
+.viewer > *{min-width:0}
+.side h3{font-size:1.8rem;font-weight:300;margin:10px 0 24px}
+.tabs{display:flex;flex-direction:column;border-top:1px solid var(--line-2)}
+.tabs button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:12px;padding:14px 4px;border-bottom:1px solid var(--line-2);font-size:1rem;transition:padding .25s,color .2s}
+.tabs button span{font-family:var(--mono);font-size:.7rem;color:var(--muted);align-self:center}
+.tabs button:hover{padding-left:12px}
+.tabs button[aria-selected="true"]{color:var(--accent);padding-left:12px}
+.tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.facts{margin:26px 0 0}
+.facts div{display:grid;grid-template-columns:92px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.facts dt{font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+.facts dd{margin:0}
+.stage{margin:0;background:var(--raise);box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.media{background:#fff;display:flex;justify-content:center;padding:14px;overflow:hidden}
+.media > *{position:relative;max-width:100%}
+.media img{display:block;width:100%;height:auto}
+.zoom{all:unset;cursor:zoom-in;display:block}
+.cmp{cursor:ew-resize;user-select:none;-webkit-user-select:none;--pos:50%}
+.cmp img{pointer-events:none}
+.cmp .after{position:absolute;inset:0;height:100%;clip-path:inset(0 0 0 var(--pos))}
+.cmp .line{position:absolute;top:0;bottom:0;left:var(--pos);border-left:2px solid var(--accent);pointer-events:none}
+.cmp .knob{position:absolute;top:50%;left:-1px;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-size:1rem;font-weight:600;letter-spacing:.1em;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.cmp .tg{position:absolute;top:8px;font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#fff;padding:5px 9px;pointer-events:none}
+.cmp .tg.l{left:8px;background:#161614}
+.cmp .tg.r{right:8px;background:var(--accent);color:var(--on-accent)}
+.cmp .rng{position:absolute;top:0;left:-24px;width:calc(100% + 48px);height:100%;margin:0;padding:0;opacity:0;cursor:ew-resize;-webkit-appearance:none;appearance:none;background:transparent;touch-action:pan-y}
+.cmp .rng::-webkit-slider-runnable-track{height:100%}
+.cmp .rng::-webkit-slider-thumb{-webkit-appearance:none;width:48px;height:100%;min-height:400px}
+.cmp .rng::-moz-range-track{height:100%;background:transparent}
+.cmp .rng::-moz-range-thumb{width:48px;height:100%;border:0;background:transparent}
+.cmp .rng:focus-visible ~ .line .knob{outline:2px solid var(--ink);outline-offset:3px}
+.stage figcaption{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;padding:14px 18px}
+.stage figcaption b{font-weight:500}
+.stage figcaption .sc{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-left:10px}
+.ctrl{display:flex;gap:10px;flex-wrap:wrap}
+.seg{display:flex;border:1px solid var(--line-2)}
+.seg button,.zbtn{all:unset;box-sizing:border-box;cursor:pointer;font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:9px 13px;color:var(--muted)}
+.seg button + button{border-left:1px solid var(--line-2)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+.zbtn{border:1px solid var(--line-2)}
+.seg button:hover,.zbtn:hover{color:var(--ink)}
+.seg button[aria-pressed="true"]:hover{color:var(--on-accent)}
+.seg button:focus-visible,.zbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.hint{font-size:.85rem;color:var(--muted);margin-top:14px}
+
+/* CHARTE : grande phrase */
+.charte{padding-block:120px;border-block:1px solid var(--line)}
+.charte .big{font-size:clamp(2.8rem,7.4vw,6.6rem);line-height:.98;letter-spacing:-.02em;font-weight:300;margin:20px 0 56px}
+.charte .big .it{color:var(--accent)}
+.charte .cols{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.charte .cols > *{min-width:0}
+.charte .soft{font-size:clamp(1.5rem,2.8vw,2.2rem);font-weight:300;line-height:1.3}
+.charte .soft .d{color:var(--accent);padding:0 .12em}
+.charte .lead{color:var(--muted);font-size:1.15rem;max-width:32em;margin-top:16px}
+.specs{margin:0;border-top:1px solid var(--line-2)}
+.specs div{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line-2)}
+.specs dt{font-size:.66rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+.specs dd{margin:0}
+
+/* MÉTHODE : frise */
+.process{display:grid;grid-template-columns:repeat(5,1fr);gap:28px;position:relative}
+.process::before{content:"";position:absolute;left:0;right:0;top:44px;height:1px;background:var(--line-2)}
+.process div{position:relative;display:flex;flex-direction:column;gap:10px;min-width:0}
+.process .n{font-size:4.6rem;font-weight:600;line-height:1;color:transparent;-webkit-text-stroke:1px var(--muted);background:var(--bg);align-self:flex-start;padding-right:12px}
+.process div:hover .n{-webkit-text-stroke-color:var(--accent);color:var(--accent)}
+.process h3{font-size:1.15rem;font-weight:500;letter-spacing:.02em;margin-top:8px}
+.process p{color:var(--muted);font-size:.94rem}
+
+/* CONTACT */
+.contact{background:var(--surface);border-top:1px solid var(--line)}
+.c-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:72px;align-items:end}
+.c-grid > *{min-width:0}
+.contact h2{font-size:clamp(2.8rem,7vw,6.2rem);line-height:.95;letter-spacing:-.02em;margin:18px 0 26px}
+.contact h2 .it{color:var(--accent)}
+.contact p{max-width:30em;color:var(--muted)}
+.big-tel{display:inline-block;margin-top:28px;font-size:clamp(2rem,4.6vw,3.6rem);font-weight:300;letter-spacing:.02em;text-decoration:none;border-bottom:2px solid var(--accent);line-height:1.2}
+.big-tel:hover{color:var(--accent)}
+.c-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.contact .b.wa{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.contact .b.wa:hover{background:transparent;color:var(--ink)}
+.contact .b:not(.wa):hover{background:var(--ink);color:var(--bg)}
+.c-list{margin:0;display:grid;border-top:1px solid var(--line-2)}
+.c-list div{display:grid;grid-template-columns:110px 1fr auto;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line-2)}
+.c-list dt{font-size:.66rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.c-list dd{margin:0;font-size:1.06rem;overflow-wrap:anywhere}
+.copy{font:inherit;font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;background:none;border:1px solid var(--line-2);color:var(--muted);padding:5px 10px;cursor:pointer}
+.copy:hover{border-color:var(--ink);color:var(--ink)}
+
+footer{color:var(--muted);font-size:.8rem;letter-spacing:.06em}
+footer .inner{display:flex;justify-content:space-between;align-items:center;gap:20px 32px;flex-wrap:wrap;padding-block:36px}
+.f-logo{height:120px;width:auto;display:block}
+
+/* AGRANDISSEMENT */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(8,8,8,.95);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:max(24px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(24px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb img{max-width:100%;max-height:84vh;background:#fff;object-fit:contain}
+.lb p{color:#efefec;font-size:.9rem}
+.lb .x{position:absolute;top:max(14px,env(safe-area-inset-top,0px));right:max(14px,env(safe-area-inset-right,0px));background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff;font:inherit;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;cursor:pointer}
+
+@media (max-width:980px){
+  .hdr ul{display:none}
+  .hero .inner{grid-template-columns:1fr;padding-block:130px 40px}
+  .hero::after{background:linear-gradient(180deg,rgba(14,14,13,.72) 0%,rgba(14,14,13,.5) 45%,rgba(14,14,13,.94) 100%)}
+  .hero .eyebrow{color:#e4e1d9}
+  .daynight{align-items:flex-start}
+  .daynight small{text-align:left}
+  .sh,.intro,.serv,.viewer,.charte .cols,.c-grid{grid-template-columns:1fr;gap:44px}
+  .portrait{margin-right:28px}
+  .preview{display:none}
+  .cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+  .card{flex:0 0 210px;scroll-snap-align:start}
+  .tabs{flex-direction:row;flex-wrap:wrap;gap:0 22px;border-top:0;border-bottom:1px solid var(--line-2)}
+  .tabs button{grid-template-columns:auto;border-bottom:2px solid transparent;margin-bottom:-1px;padding:12px 0}
+  .tabs button span{display:none}
+  .tabs button:hover,.tabs button[aria-selected="true"]{padding-left:0}
+  .tabs button[aria-selected="true"]{border-color:var(--accent)}
+  .facts{display:none}
+  .process{grid-template-columns:1fr 1fr;row-gap:44px}
+  .process::before{display:none}
+  section{padding-block:92px}
+}
+@media (max-width:600px){
+  .process{grid-template-columns:1fr}
+  .tk-track img{height:120px}
+  .card{flex-basis:170px}
+  .media{padding:8px}
+  .c-list div,.specs div{grid-template-columns:1fr;gap:4px}
+  .copy{justify-self:start}
+  .cta-s{padding:10px 12px;letter-spacing:.16em}
+  .logo b{letter-spacing:.12em;font-size:.9rem}
+  .logo small{display:none}
+  .logo img{height:32px}
+  .logo{gap:8px}
+  .hdr nav{gap:12px}
+  .cta-s{padding:9px 11px;letter-spacing:.12em}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Pages de service */
+.hdr{background:rgba(14,14,13,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+.p-head{padding-block:150px 64px;border-bottom:1px solid var(--line)}
+.crumb{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:28px}
+.crumb a{text-decoration:none;color:var(--muted)}
+.crumb a:hover{color:var(--accent)}
+.p-head h1{font-size:clamp(2.6rem,6.4vw,5.6rem);line-height:.98;letter-spacing:-.02em;font-weight:300;margin:18px 0 26px;max-width:16em}
+.p-head h1 .it{color:var(--accent)}
+.p-head .lead{max-width:38em;color:var(--muted);font-size:1.12rem}
+.art{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:start}
+.art > *{min-width:0}
+.art h2{font-size:clamp(1.6rem,3vw,2.3rem);font-weight:300;margin:0 0 22px}
+.art p{color:var(--muted);margin:0 0 18px;max-width:36em}
+.art ul{list-style:none;margin:0 0 36px;padding:0;border-top:1px solid var(--line-2)}
+.art li{padding:14px 0 14px 28px;border-bottom:1px solid var(--line-2);position:relative}
+.art li::before{content:"";position:absolute;left:0;top:27px;width:14px;height:1px;background:var(--accent)}
+.figs{display:grid;gap:18px}
+.figs figure{margin:0}
+.figs img{display:block;width:100%;height:auto;background:#fff}
+.figs img.photo{background:none}
+.figs figcaption{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.others{border-top:1px solid var(--line)}
+.o-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0;border-top:1px solid var(--line-2);margin-top:34px}
+.o-grid a{display:flex;justify-content:space-between;gap:16px;padding:22px 4px;border-bottom:1px solid var(--line-2);text-decoration:none;transition:color .2s}
+.o-grid a:hover{color:var(--accent)}
+.f-links{display:flex;flex-wrap:wrap;gap:8px 22px;width:100%;order:3}
+.f-links a{text-decoration:none;color:var(--muted)}
+.f-links a:hover{color:var(--accent)}
+.svc-more{display:inline-block;margin-top:12px;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--accent)}
+@media (max-width:900px){.art{grid-template-columns:1fr;gap:44px}.p-head{padding-block:120px 48px}}
+</style>
+</head>
+<body>
+<header class="hdr" id="hdr">
+  <div class="inner">
+    <nav aria-label="Navigation principale">
+      <a class="logo" href="/"><img src="/img/logo-entete.png" alt="" width="166" height="120"><span><b>JOÉ CICIRETTI</b><small>Dessinateur technique</small></span></a>
+      <ul>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#realisations">Réalisations</a></li>
+        <li><a href="/#methode">Méthode</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+      <a class="cta-s" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="p-head">
+    <div class="inner">
+      <div class="crumb"><a href="/">Accueil</a> / Relevés de l&#x27;existant</div>
+      <span class="eyebrow">Dessinateur en architecture · Belgique</span>
+      <h1>Relevés <span class="it">de l'existant</span></h1>
+      <p class="lead">Avant de transformer un bâtiment, il faut des plans fiables de ce qui existe. Je me rends sur place, je mesure et je redessine.</p>
+    </div>
+  </div>
+  <section>
+    <div class="inner art">
+      <div>
+        <h2>Des mesures sur place à des plans exploitables</h2>
+        <p>Le relevé couvre les niveaux, les ouvertures, les escaliers et les hauteurs utiles au projet. De retour au bureau, tout est mis au net en plans, coupes et façades.</p><p>Ce qui n&#x27;a pas pu être mesuré est clairement signalé, pour que vous sachiez toujours ce qui est relevé et ce qui reste à vérifier.</p>
+        <ul><li>Mesures des niveaux, murs et ouvertures</li><li>Photos de référence de chaque pièce</li><li>Plans, coupes et façades de l&#x27;existant</li><li>Points non mesurables signalés « à vérifier »</li></ul>
+        <a class="b k" href="#contact">Demander une offre <span class="ar">→</span></a>
+      </div>
+      <div class="figs">
+<figure><img src="/img/renovation-1/rez-ex.jpg" alt="Plan d&#x27;un rez-de-chaussée existant" loading="lazy"><figcaption>Plan d&#x27;un rez-de-chaussée existant</figcaption></figure>
+<figure><img src="/img/renovation-1/facade-arriere-ex.jpg" alt="Façade existante" loading="lazy"><figcaption>Façade existante</figcaption></figure>
+      </div>
+    </div>
+  </section>
+  <section class="others" style="padding-top:72px">
+    <div class="inner">
+      <span class="eyebrow">Autres services</span>
+      <div class="o-grid"><a href="/plans-permis-urbanisme/"><span>Plans de permis d&#x27;urbanisme</span><span aria-hidden="true">→</span></a><a href="/plans-regularisation/"><span>Plans de régularisation</span><span aria-hidden="true">→</span></a><a href="/redessin-plans-anciens/"><span>Redessin de plans anciens</span><span aria-hidden="true">→</span></a><a href="/vues-3d-architecture/"><span>Modélisation et vues 3D</span><span aria-hidden="true">→</span></a><a href="/bordereaux-chassis-metres/"><span>Bordereaux et métrés</span><span aria-hidden="true">→</span></a><a href="/dessinateur-architecture-belgique/"><span>Zone d&#x27;intervention</span><span aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
+  <section id="contact" class="contact">
+    <div class="inner c-grid">
+      <div>
+        <span class="eyebrow">Contact</span>
+        <h2>Un dossier <span class="it">à confier ?</span></h2>
+        <p>Envoyez-moi une description du projet et les documents disponibles par e-mail ou sur WhatsApp, ou appelez-moi. Une offre vous est adressée dans les meilleurs délais.</p>
+        <a class="big-tel" href="tel:+32478079843">0478 07 98 43</a>
+        <div class="c-btns">
+          <a class="b wa" href="https://wa.me/32478079843?text=Bonjour%2C%20je%20vous%20contacte%20depuis%20votre%20site%20pour%20un%20projet." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
+            Écrire sur WhatsApp
+          </a>
+          <a class="b" href="https://www.facebook.com/share/18TRoVWREb/" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+      <dl class="c-list">
+        <div><dt>E-mail</dt><dd id="c-mail"><a href="mailto:joeciciretti.dessinateur@gmail.com">joeciciretti.dessinateur@gmail.com</a></dd><span></span></div>
+        <div><dt>Téléphone</dt><dd id="c-tel">0478 07 98 43</dd><span></span></div>
+        <div><dt>Zone</dt><dd>Toute la Belgique</dd><span></span></div>
+        <div><dt>N° TVA</dt><dd>BE 0793.338.353</dd><span></span></div>
+      </dl>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="inner">
+    <img class="f-logo" src="/img/logo-complet.png" alt="Logo Joé Ciciretti, dessinateur technique" width="700" height="725" loading="lazy">
+    <span>© 2026 Joé Ciciretti</span>
+    <nav class="f-links" aria-label="Pages du site"><a href="/">Accueil</a><a href="/plans-permis-urbanisme/">Plans de permis d&#x27;urbanisme</a><a href="/plans-regularisation/">Plans de régularisation</a><a href="/redessin-plans-anciens/">Redessin de plans anciens</a><a href="/vues-3d-architecture/">Modélisation et vues 3D</a><a href="/bordereaux-chassis-metres/">Bordereaux et métrés</a><a href="/dessinateur-architecture-belgique/">Zone d&#x27;intervention</a></nav>
+  </div>
+</footer>
+
+</body>
+</html>
